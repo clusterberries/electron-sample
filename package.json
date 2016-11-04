@@ -1,0 +1,16 @@
+{
+  "name": "electron-sample",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clusterberries/electron-sample.git"
+  },
+  "dependencies": {
+    "electron": "1.4.5"
+  }
+}
