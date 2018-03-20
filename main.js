@@ -1,7 +1,6 @@
 'use strict';
 
-const { app, BrowserWindow, globalShortcut } = require('electron');
-const { systemPreferences } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
 let win;
@@ -17,19 +16,7 @@ app.on('ready', () => {
         win = null
     });
 
-    // Register a 'CommandOrControl+X' shortcut listener.
-    const ret = globalShortcut.register('CommandOrControl+X', () => {
-        console.log('CommandOrControl+X is pressed');
+    win.webContents.on('crashed', (event) => {
+        console.log('crashed!', event)
     });
-
-    if (!ret) {
-        console.log('registration failed');
-    }
-
-    // Check whether a shortcut is registered.
-    console.log(globalShortcut.isRegistered('CommandOrControl+X'));
-});
-
-app.on('will-quit', () => {
-    globalShortcut.unregisterAll();
 });
