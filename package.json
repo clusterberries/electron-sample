@@ -11,6 +11,6 @@
     "url": "git+https://github.com/clusterberries/electron-sample.git"
   },
   "dependencies": {
-    "electron": "1.4.5"
+    "electron": "1.8.6"
   }
 }
