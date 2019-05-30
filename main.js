@@ -22,4 +22,8 @@ app.on('ready', () => {
     win.on('closed', () => {
         win = null
     });
+
+    win.setMenu(null);
+
+    console.log(process.versions);
 });

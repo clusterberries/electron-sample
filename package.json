@@ -1,16 +1,37 @@
 {
-  "name": "electron-sample",
+  "name": "desktop-capturer-sample",
   "version": "0.1.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron ."
+    "start": "./node_modules/.bin/electron .",
+    "build": "rm -rf dist/ && build --x64",
+    "reinstall": "rm -rf node_modules/ && npm i && npm start"
+  },
+  "build": {
+    "appId": "com.test.electron",
+    "win": {
+      "publisherName": [
+        ""
+      ],
+      "target": [
+        {
+          "target": "portable"
+        }
+      ]
+    },
+    "nsis": {
+      "deleteAppDataOnUninstall": true,
+      "packElevateHelper": false,
+      "differentialPackage": false
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/clusterberries/electron-sample.git"
   },
-  "dependencies": {
-    "electron": "4.0.4"
+  "devDependencies": {
+    "electron": "5.0.0-beta.2",
+    "electron-builder": "20.38.5"
   }
 }
