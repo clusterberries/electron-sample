@@ -1,5 +1,5 @@
 {
-  "name": "desktop-capturer-sample",
+  "name": "electron-sample",
   "version": "0.1.0",
   "description": "",
   "main": "main.js",
@@ -31,7 +31,7 @@
     "url": "git+https://github.com/clusterberries/electron-sample.git"
   },
   "devDependencies": {
-    "electron": "5.0.0-beta.2",
+    "electron": "5.0.2",
     "electron-builder": "20.38.5"
   }
 }
