@@ -2,9 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Electron App</title>
+    <title>Desktop Capturer</title>
+    <style>
+      body {
+        height: 100%;
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        margin-bottom: 30px;
+      }
+      li .source-img {
+        width: 200px;
+        height: 100px;
+      }
+      li .source-img img {
+        display: block;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-    <h3>Hello World!</h3>
+    <ul id="screens-container"></ul>
+
+    <script type="text/javascript" src="renderer.js"></script>
   </body>
 </html>
