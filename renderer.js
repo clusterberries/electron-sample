@@ -5,12 +5,8 @@ var desktopCapturer = electron.desktopCapturer;
 
 var container = document.getElementById('screens-container');
 
-desktopCapturer.getSources({ types: ['screen'] }, function (error, sources) {
-    if (error) {
-        console.log('ERROR: Unable to get sources.', error);
-        return;
-    }
-
+desktopCapturer.getSources({ types: ['screen'] })
+.then(function (sources) {
     console.log('Received ' + sources.length + ' sources.', sources);
 
     var innerHTML = '';
@@ -28,4 +24,7 @@ desktopCapturer.getSources({ types: ['screen'] }, function (error, sources) {
     });
 
     container.innerHTML = innerHTML;
+})
+.catch(function (error) {
+    console.log('ERROR: Unable to get sources.', error);
 });
