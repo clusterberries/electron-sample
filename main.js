@@ -1,13 +1,13 @@
 'use strict';
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
 let win;
 
 app.on('ready', () => {
     win = new BrowserWindow({
-        width: 600,
+        width: 800,
         height: 600,
         show: true,
         webPreferences: {
@@ -24,6 +24,14 @@ app.on('ready', () => {
     });
 
     win.setMenu(null);
+    win.toggleDevTools();
 
     console.log(process.versions);
+});
+
+ipcMain.on('print', () => {
+    console.log('print');
+    win.webContents.print({}, (success, errorResult) => {
+        console.log('errorResult', errorResult);
+    });
 });
