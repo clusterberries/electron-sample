@@ -23,7 +23,5 @@ app.on('ready', () => {
         win = null
     });
 
-    win.setMenu(null);
-
     console.log(process.versions);
 });
