@@ -31,7 +31,7 @@
     "url": "git+https://github.com/clusterberries/electron-sample.git"
   },
   "devDependencies": {
-    "electron": "6.1.4",
+    "electron": "9.4.0",
     "electron-builder": "20.38.5"
   }
 }
